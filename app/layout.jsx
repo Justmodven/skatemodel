@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "SkateModel — Find the Pro Who Plays Like You",
+  title: "sk8tr — Find the Pro Who Plays Like You",
   description: "Match your playing style to one of 12 hockey archetypes. Study the pros who play your game.",
   other: {
     "apple-mobile-web-app-capable": "yes",

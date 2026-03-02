@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 // ═══════════════════════════════════════════════════════════════
-// SKATEMODEL — MVP v1.0 — Vercel/Next.js
+// SK8TR — MVP v1.0 — Vercel/Next.js
 // 12 archetypes · 3 behavioral axes · 48 pro models
 // Axis-weighted matching · Pre-canned notes · Coming Soon gates
 // ═══════════════════════════════════════════════════════════════
@@ -668,14 +668,14 @@ const ComingSoon = ({ label }) => (
 // ═══════════════════════════════════════════════════════════
 
 const Splash = ({ onGo }) => (
-  <Phone><div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: 780, padding: "0 36px", textAlign: "center" }}>
+  <Phone><div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "calc(100dvh - 40px)", padding: "0 36px", textAlign: "center" }}>
     <div style={{ width: 76, height: 76, borderRadius: 20, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 28, boxShadow: T.shM }}><span style={{ fontSize: 34, filter: "brightness(10)" }}>⛸</span></div>
-    <h1 style={{ fontSize: 32, fontWeight: 800, margin: 0, letterSpacing: "-0.04em" }}>SkateModel</h1>
+    <h1 style={{ fontSize: 32, fontWeight: 800, margin: 0, letterSpacing: "-0.04em" }}>sk8tr</h1>
     <p style={{ color: T.textSec, fontSize: 15, lineHeight: 1.6, margin: "10px 0 0", maxWidth: 260 }}>Find the pro who plays like you. Study their game. Build yours.</p>
     <div style={{ margin: "20px 0 0", padding: "14px 18px", borderRadius: T.rs, background: T.card, boxShadow: T.sh, textAlign: "left", width: "100%" }}>
       <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: T.textTer, marginBottom: 8 }}>How It Works</div>
       <div style={{ fontSize: 13, color: T.text, lineHeight: 1.6 }}>
-        SkateModel maps your on-ice behavior to one of <strong>12 scientifically-derived playing archetypes</strong> using a behavioral axis system developed from decades of scouting methodology. 8 questions, 3 behavioral dimensions, 1 archetype match.
+        sk8tr maps your on-ice behavior to one of <strong>12 scientifically-derived playing archetypes</strong> using a behavioral axis system developed from decades of scouting methodology. 8 questions, 3 behavioral dimensions, 1 archetype match.
       </div>
     </div>
     <div style={{ width: "100%", marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -692,7 +692,7 @@ const Methodology = ({ onContinue, onBack }) => (
     <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: T.textTer, marginBottom: 16 }}>The Science</div>
     <h2 style={{ fontSize: 24, fontWeight: 800, margin: "0 0 6px", letterSpacing: "-0.03em", lineHeight: 1.2 }}>3 Axes. 12 Archetypes. Your Game.</h2>
     <p style={{ color: T.textSec, fontSize: 14, lineHeight: 1.65, margin: "12px 0 20px" }}>
-      Every hockey player's instincts operate along three measurable behavioral dimensions. SkateModel isolates these dimensions through targeted behavioral inputs — not stats, not highlights — to identify the pro archetype that matches how your brain processes the game.
+      Every hockey player's instincts operate along three measurable behavioral dimensions. sk8tr isolates these dimensions through targeted behavioral inputs — not stats, not highlights — to identify the pro archetype that matches how your brain processes the game.
     </p>
     {[
       { axis: "Cognitive-Motor Orientation", poles: "Terminus · Distributor · Disruptor", desc: "Where does your brain direct the play? Finishers terminate possessions with shots. Distributors create for others. Disruptors break structure.", color: "#DC2626" },
@@ -976,7 +976,7 @@ const Account = ({ onSkip, onSign }) => {
 // APP
 // ═══════════════════════════════════════════════════════════
 
-export default function SkateModel() {
+export default function Sk8tr() {
   const [scr, sScr] = useState("splash");
   const [ak, sAk] = useState(null);
   const [vid, sVid] = useState(null);
