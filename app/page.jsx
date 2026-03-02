@@ -606,14 +606,8 @@ const NOTE_TEMPLATES = {
 // ═══════════════════════════════════════════════════════════
 
 const Phone = ({ children }) => (
-  <div style={{ width: 393, minHeight: 852, maxHeight: 852, overflow: "auto", background: T.bg, fontFamily: T.f, color: T.text, position: "relative", borderRadius: 48, boxShadow: `0 0 0 8px #1a1a1a,${T.shL}`, margin: "0 auto", scrollbarWidth: "none" }}>
-    <div style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(250,250,250,0.92)", backdropFilter: "blur(20px)", padding: "14px 28px 8px", display: "flex", justifyContent: "space-between", fontSize: 12, fontWeight: 600 }}>
-      <span>9:41</span>
-      <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-        <span style={{ fontSize: 10 }}>📶</span>
-        <div style={{ width: 25, height: 12, border: `1.5px solid ${T.text}`, borderRadius: 3, display: "flex", alignItems: "center", padding: "0 2px" }}><div style={{ width: "70%", height: 7, background: T.text, borderRadius: 1 }} /></div>
-      </div>
-    </div>
+  <div style={{ width: "100%", maxWidth: 480, minHeight: "100dvh", overflow: "auto", background: T.bg, fontFamily: T.f, color: T.text, position: "relative", margin: "0 auto", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}>
+    <div style={{ height: "env(safe-area-inset-top, 0px)" }} />
     {children}
   </div>
 );
@@ -642,7 +636,7 @@ const OptCard = ({ sel, onClick, children, icon }) => (
 const Prog = ({ step, total }) => <div style={{ display: "flex", gap: 5, marginBottom: 28 }}>{Array.from({ length: total }).map((_, i) => <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: i <= step ? T.accent : T.border, transition: "background 0.3s" }} />)}</div>;
 
 const Nav = ({ active = "home" }) => (
-  <div style={{ position: "sticky", bottom: 0, background: "rgba(255,255,255,0.95)", backdropFilter: "blur(20px)", borderTop: `1px solid ${T.borderLight}`, display: "flex", justifyContent: "space-around", padding: "8px 0 32px" }}>
+  <div style={{ position: "sticky", bottom: 0, background: "rgba(255,255,255,0.95)", backdropFilter: "blur(20px)", borderTop: `1px solid ${T.borderLight}`, display: "flex", justifyContent: "space-around", padding: "8px 0 calc(12px + env(safe-area-inset-bottom, 16px))" }}>
     {[{ id: "home", i: "⛸", l: "Home" }, { id: "playlist", i: "▶", l: "Playlist" }, { id: "notes", i: "📝", l: "Notes" }, { id: "profile", i: "👤", l: "Profile" }].map(t => (
       <div key={t.id} style={{ textAlign: "center", cursor: "pointer", opacity: active === t.id ? 1 : 0.3, transition: "opacity 0.2s" }}>
         <div style={{ fontSize: 20 }}>{t.i}</div><div style={{ fontSize: 10, fontWeight: active === t.id ? 600 : 400, marginTop: 3, color: T.text }}>{t.l}</div>
@@ -992,7 +986,7 @@ export default function SkateModel() {
   const [mode, sMode] = useState(null);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#e5e5ea", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 0" }}>
+    <div style={{ minHeight: "100dvh", background: T.bg, display: "flex", justifyContent: "center" }}>
       {scr === "splash" && <Splash onGo={m => {
         sMode(m);
         if (m === "search") sScr("search");
